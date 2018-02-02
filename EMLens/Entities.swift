@@ -11,7 +11,9 @@ import Foundation
 struct Actor {
     let name: String
     let surname: String
-    
+}
+
+extension Actor {
     struct Lenses {
         static let name = Lens<Actor, String>(
             get: {$0.name},
@@ -27,7 +29,9 @@ struct Actor {
 struct Movie {
     let title: String
     let mainActor: Actor
-    
+}
+
+extension Movie {
     struct Lenses {
         static let actor = Lens<Movie, Actor>(get: { (movie) -> Actor in
             return movie.mainActor
